@@ -1,0 +1,22 @@
+<div class="container">
+    
+    <div class="row"> 
+
+        <% @articles.each do |article| %>
+        <div class="col-md-3 margin-top-5per article-block">
+            <%= link_to article do %>
+                    <%= image_tag  "LRG_DSC03085.jpeg", class: "img-fluid padding-top-15" %>
+                    <div class="padding-bottom-15">
+                    <p class="title"><%= article.title %></p>
+                    <span>
+                    <%= article.created_at.strftime('%Y年%m月%d日') %>
+                    </span>
+                    </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div> 
+    <div class="row">
+        <%= link_to "新規作成", new_article_path, class:"margin-top-5per btn btn-primary" %>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center"><%= @article.title %></h1>
+        <div class="col-md-12 margin-top-5per article-block">
+            <%= image_tag  "LRG_DSC03085.jpeg", class: "img-fluid padding-top-15 article-img" %>
+                <div class="padding-bottom-15">
+                    <%
+=begin%>
+<p class="title"><%= @article.title %></p> 
+<%
+=end%>
+                    <p class="title"><%= @article.body %></p>
+                    <p class="text-right"><%= @article.created_at.strftime('%Y年%m月%d日') %></p>
+                </div>
+        </div>
+    <div class="margin-top-2per padding-bottom-15">
+    <%= link_to "編集", edit_article_path(@article), class: "btn btn-primary",style: "margin-right: 15px:" %>
+    <%= link_to "削除", article_path(@article), method: :delete, data: {confirm: "削除しても良いですか？"} ,class: "btn btn-danger" %>
+    </div>
+</div>
